@@ -22,10 +22,10 @@ def PatternCount(txt, patt):
     return volta
 
 def main():
-    fl = open("vibrio_colerae.txt.txt")
+    fl = open("vibrio_colerae.txt.txt")         # GENOME OF YOUR CHOICE
     txt = fl.readline()
 
-    patt = "CGATCGAC"     # INSERIR GENE
+    patt = "CGATCGAC"     # INSERT GENE
 
     mapa = "/-\_/-\_/-\_/-\_/-\_/-\_/-\_/-\_/-\_/-\_/-\_/-\_/-\_/-\_/-\_/-\_/-\_/-\_"
 
