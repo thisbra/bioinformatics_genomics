@@ -8,4 +8,6 @@ task 2: using FrequentWords algorithm to analyse vibrio_cholerae's genome and fi
 
 task 3: finds out complementary strand of the strand inputed
 
-amino_frq: Tells the frequency of DnaA contact with 20 of the amino acids 
+task 4: enumerate the position of inputed pattern on genome
+
+amino_frq: tells the frequency of DnaA contact with 20 of the amino acids 
