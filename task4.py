@@ -10,19 +10,17 @@ def findPattern(patt ,gnm):
 
 def main():
 
-    fl = open("dataset_3_5.txt", "r")
+    fl = open("vibrio_colerae.txt.txt", "r")
 
-    patt = fl.readline().strip()
-    gnm = fl.readline()
+    patt = "CTTGATCAT"
+    gnm = fl.read()
 
     positions = findPattern(patt, gnm)
 
-    esc = open("resposta.txt", "w")
 
     for n in positions:
-        esc.write(str(n) + " ")
+        print(str(n), end=" ")
 
-    esc.close()
     fl.close()
 
 main()
