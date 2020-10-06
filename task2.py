@@ -6,7 +6,7 @@ def Text(txt, i, k):
 
 def PatternCount(txt, patt):
     count = 0
-    print("PATTERN: " + patt)
+    # print("PATTERN: " + patt)
 
     for i in range(len(txt) - (len(patt)-1)):
 
@@ -40,9 +40,9 @@ def FrequentWords(txt, k):
 
 def main():
 
-    fl = open("dataset_2_10.txt")
-    txt = fl.readline()
-    k = fl.readline()
+    fl = open("dataset_2_10.txt", "r")
+    txt = open("vibrio_colerae.txt.txt", "r").read()
+    k = 7
 
     flst = FrequentWords(txt, int(k))
 
