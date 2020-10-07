@@ -1,22 +1,3 @@
-def Text(txt, i, k):
-
-    secc = txt[i:(i+k)]
-
-    return secc
-
-def PatternCount(txt, patt):
-    count = 0
-    # print("PATTERN: " + patt)
-
-    for i in range(len(txt) - (len(patt)-1)):
-
-        secc = txt[i:(i+len(patt))]
-        if secc == patt:
-            count += 1
-
-
-    return count
-
 def FrequentWords(txt, k):
     frequentPatterns = []
     count = []
@@ -86,6 +67,7 @@ def FrequentWordsIIntClumps(txt, k, ntclumps):
         else:
             freqChecker[secc] = 1                                   # IF SECC NOT IN ARRAY, PUTS IT ON IT
 
+    print(tClump)
     return tClump
 
 def clump(genome, nkmers, lwindow, ntclump):
@@ -108,18 +90,27 @@ def clump(genome, nkmers, lwindow, ntclump):
             secc = genome[(soma - len(genome)):]                # SETS WINDOW ON SECC
             soma = soma + lwindow
 
-        return FrequentWordsIIntClumps(secc, nkmers, ntclump)
-
+        clumps.append(FrequentWordsIIntClumps(secc, nkmers, ntclump))
 
 def main():
 
-    genome = 'CGGACTCGACAGATGTGAAGAACGACAATGTGAAGACTCGACACGACAGAGTGAAGAGAAGAGGAAACATTGTAA'
-    nkmers = 5
-    lwindow = 50
-    ntclump = 4
+    # genome = 'CGGACTCGACAGATGTGAAGAACGACAATGTGAAGACTCGACACGACAGAGTGAAGAGAAGAGGAAACATTGTAA'
+    # nkmers = 5
+    # lwindow = 50
+    # ntclump = 4
 
-    clumps = clump(genome, nkmers, lwindow, ntclump)
+    fl = open("testTask5.txt", "r")
+    lst = fl.read().split()
 
-    print(clumps)
+    genome = lst[0]
+    nkmers = int(lst[1])
+    lwindow = int(lst[2])
+    ntclump = int(lst[3])
+
+
+    # clumps = clump(genome, nkmers, lwindow, ntclump)
+    #
+    # for c in clumps:
+    #     print(c, end=" ")
 
 main()
