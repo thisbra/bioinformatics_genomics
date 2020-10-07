@@ -38,13 +38,27 @@ def FrequentWords(txt, k):
 
     return sorted(frequentPatterns)
 
+def FrequentWordsII(txt, k):
+
+    freqChecker = {}
+
+    for i in range(len(txt)-k):
+        secc = txt[i:(i+k)]
+
+        if secc in freqChecker:
+            freqChecker[secc] += 1
+        else:
+            freqChecker[secc] = 1
+
+    print(sorted(freqChecker.items(), key=lambda kv:kv[1]))
+
 def main():
 
     fl = open("dataset_2_10.txt", "r")
-    txt = open("vibrio_colerae.txt.txt", "r").read()
-    k = 7
+    txt = open("dataset_3_2.txt", "r").readline()
+    k = 6
 
-    flst = FrequentWords(txt, int(k))
+    FrequentWordsII(txt, k)
 
     for i in flst:
         print(i + " ")

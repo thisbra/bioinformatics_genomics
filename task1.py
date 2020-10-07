@@ -8,12 +8,14 @@ def Text(txt, patt, i):
 
 def PatternCount(txt, patt):
     count = 0
+    n = 0
     print("PATTERN: " + patt)
     index = []
 
     for i in range(len(txt) - (len(patt)-1)):
 
-        secc = Text(txt, patt, i)
+        secc = txt[n:(n+len(patt))]
+        n += 1
         if secc == patt:
             count += 1
             index.append(math.floor((i * 100) / len(txt)))
