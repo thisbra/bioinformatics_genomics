@@ -57,19 +57,18 @@ def FrequentWordsII(txt, k):
     topValue = sortshit[0][1]
 
     for n in range(len(sortshit)):
-
+        print(sortshit[n][1])
         if sortshit[n][1] == topValue:
             frequentPatterns.append(sortshit[n][0])
         else:
             break
 
-    print(frequentPatterns)
+    return frequentPatterns
 
 def main():
 
     fl = open("dataset_2_10.txt", "r")
     txt = open("vibrio_colerae.txt.txt", "r").readline()
-    k = 6
 
     FrequentWordsII(txt, k)
 

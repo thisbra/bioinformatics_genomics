@@ -38,6 +38,34 @@ def FrequentWords(txt, k):
 
     return sorted(frequentPatterns)
 
+def FrequentWordsII(txt, k):
+
+    freqChecker = {}                                                # CREATES DICT FOR FREQUENCY OF SECCS
+
+    for i in range(len(txt)-k):                                     # FIRST
+        secc = txt[i:(i+k)]
+
+        if secc in freqChecker:
+            freqChecker[secc] += 1
+
+        else:
+            freqChecker[secc] = 1
+
+    sortshit = sorted(freqChecker.items(), key=lambda x:x[1], reverse=True)
+
+    topValue = sortshit[0][1]
+
+    frequentPatterns = []
+
+    for n in range(len(sortshit)):
+        print(sortshit[n][1])
+        if sortshit[n][1] == topValue:
+            frequentPatterns.append(sortshit[n][0])
+        else:
+            break
+
+    return frequentPatterns
+
 
 def clump(genome, nkmers, lwindow, ntclump):
 
@@ -60,8 +88,6 @@ def clump(genome, nkmers, lwindow, ntclump):
             soma = soma + lwindow
 
         FrequentWords(secc, nkmers)
-
-
 
 def main():
 
