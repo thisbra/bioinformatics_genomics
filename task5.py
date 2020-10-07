@@ -42,30 +42,51 @@ def FrequentWordsII(txt, k):
 
     freqChecker = {}                                                # CREATES DICT FOR FREQUENCY OF SECCS
 
-    for i in range(len(txt)-k):                                     # FIRST
+    for i in range(len(txt)-k):                                     # CREATES PATTERNS AND K-MERS
         secc = txt[i:(i+k)]
 
         if secc in freqChecker:
             freqChecker[secc] += 1
 
+
         else:
-            freqChecker[secc] = 1
+            freqChecker[secc] = 1                                   # IF SECC NOT IN ARRAY, PUTS IT ON IT
 
-    sortshit = sorted(freqChecker.items(), key=lambda x:x[1], reverse=True)
 
-    topValue = sortshit[0][1]
+    sortshit = sorted(freqChecker.items(), key=lambda x:x[1], reverse=True) # LAMBDA FUNCTION FOR SORTING SECCS BY FRQ
 
-    frequentPatterns = []
+    topValue = sortshit[0][1]                                       # VALUE OF THE MOST FREQUENT ITEM
 
-    for n in range(len(sortshit)):
+    frequentPatterns = []                                           # CREATES LIST FOR PUTTING MOST FREQUENT WORDS
+
+    for n in range(len(sortshit)):                                  # RETURNS ONLY THE MOST FREQUENT PATTERNS
         print(sortshit[n][1])
         if sortshit[n][1] == topValue:
             frequentPatterns.append(sortshit[n][0])
         else:
             break
 
-    return frequentPatterns
 
+def FrequentWordsIIntClumps(txt, k, ntclumps):
+
+    freqChecker = {}                                                # CREATES DICT FOR FREQUENCY OF SECCS
+    tClump = []
+
+    for i in range(len(txt) - k):                                   # CREATES PATTERNS AND K-MERS
+        secc = txt[i:(i + k)]
+
+        if secc in freqChecker:
+            freqChecker[secc] += 1
+
+            if freqChecker[secc] == ntclumps:                       # IF FREQUENCY REACHES N, GOES INTO LIST
+                tClump.append(secc)
+            elif freqChecker[secc] > ntclumps:                      # IF FREQUENCY EXCEDS N, SECC IS REMOVED
+                tClump.remove(secc)
+
+        else:
+            freqChecker[secc] = 1                                   # IF SECC NOT IN ARRAY, PUTS IT ON IT
+
+    return tClump
 
 def clump(genome, nkmers, lwindow, ntclump):
 
@@ -87,7 +108,8 @@ def clump(genome, nkmers, lwindow, ntclump):
             secc = genome[(soma - len(genome)):]                # SETS WINDOW ON SECC
             soma = soma + lwindow
 
-        FrequentWords(secc, nkmers)
+        return FrequentWordsIIntClumps(secc, nkmers, ntclump)
+
 
 def main():
 
@@ -98,7 +120,6 @@ def main():
 
     clumps = clump(genome, nkmers, lwindow, ntclump)
 
-    for g in clumps:
-        print(FrequentWords(g, 5))
+    print(clumps)
 
 main()
