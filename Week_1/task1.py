@@ -25,7 +25,7 @@ def PatternCount(txt, patt):
 
 def main():
     fl = open("vibrio_colerae.txt.txt")         # GENOME OF YOUR CHOICE
-    txt = fl.readline()
+    txt = 'CGGAGGACTCTAGGTAACGCTTATCAGGTCCATAGGACATTCA'
 
     patt = "CGATCGAC"     # INSERT GENE
 

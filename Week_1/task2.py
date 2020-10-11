@@ -70,7 +70,7 @@ def main():
     fl = open("dataset_2_10.txt", "r")
     txt = open("vibrio_colerae.txt.txt", "r").readline()
 
-    FrequentWordsII(txt, k)
+    print(FrequentWordsII("CGGAGGACTCTAGGTAACGCTTATCAGGTCCATAGGACATTCA", 3))
 
 
 main()

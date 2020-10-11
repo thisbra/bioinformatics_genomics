@@ -41,7 +41,6 @@ def FrequentWordsII(txt, k):
     frequentPatterns = []                                           # CREATES LIST FOR PUTTING MOST FREQUENT WORDS
 
     for n in range(len(sortshit)):                                  # RETURNS ONLY THE MOST FREQUENT PATTERNS
-        print(sortshit[n][1])
         if sortshit[n][1] == topValue:
             frequentPatterns.append(sortshit[n][0])
         else:
@@ -67,7 +66,6 @@ def FrequentWordsIIntClumps(txt, k, ntclumps):
         else:
             freqChecker[secc] = 1                                   # IF SECC NOT IN ARRAY, PUTS IT ON IT
 
-    print(tClump)
     return tClump
 
 def clump(genome, nkmers, lwindow, ntclump):
@@ -81,16 +79,34 @@ def clump(genome, nkmers, lwindow, ntclump):
             soma = soma + lwindow
             secc = genome[(lwindow*cont):soma]                  # SETS WINDOW ON SECC
 
-            clumps.append(genome[(lwindow*cont):soma])
+            # clumps.append(genome[(lwindow*cont):soma])
             cont += 1
 
         else:                                                   # ELSE TEXT ENDS
 
-            clumps.append(genome[(soma-len(genome)):])
+            # clumps.append(genome[(soma-len(genome)):])
             secc = genome[(soma - len(genome)):]                # SETS WINDOW ON SECC
             soma = soma + lwindow
 
         clumps.append(FrequentWordsIIntClumps(secc, nkmers, ntclump))
+
+    return clumps
+
+def clumpCorrect(genome, nkmers, lwindow, ntclump):
+
+    count = 0
+    clumps = []
+
+    for t in range(len(genome) - lwindow):
+        secc = genome[count:(count+lwindow)]
+
+        frq = FrequentWordsIIntClumps(secc, nkmers, ntclump)
+
+        if len(frq) > 0:
+            clumps.append(frq)
+
+
+    return clumps
 
 def main():
 
@@ -108,9 +124,9 @@ def main():
     ntclump = int(lst[3])
 
 
-    # clumps = clump(genome, nkmers, lwindow, ntclump)
-    #
-    # for c in clumps:
-    #     print(c, end=" ")
+    clumps = clumpCorrect(genome, nkmers, lwindow, ntclump)
+
+    for c in clumps:
+        print(c)
 
 main()

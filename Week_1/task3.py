@@ -21,12 +21,12 @@ def findpi(dna):
 def main():
 
     fl = open("dataset_3_2.txt")                         # INSERT GENE TO FIND ITS...
-    dna = fl.read()                                      # COMPLEMENTARY STRAND
+    dna = 'CCAGATC'                                      # COMPLEMENTARY STRAND
 
-    rev = findpi(dna).strip()
-    esc = open("resposta.txt","w")
-    esc.write(rev)
+    rev = findpi(dna)
+    # esc = open("resposta.txt","w")
+    print(rev)
 
-    esc.close()
+    # esc.close()
     fl.close()
 main()
