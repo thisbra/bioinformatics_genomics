@@ -15,3 +15,11 @@ WEEK 1:
     task 5: finding OriC through clumping [INCOMPLETE]
     
     amino_frq: tells the frequency of DnaA contact with 20 of the amino acids 
+    
+WEEK 2:
+
+    skew: counts glycine-citosine skewing to indentify position of DNA-polymerase relative to ori
+    
+    task 2: numbers of string/genome nucleotide mismatches
+    
+    task 3: pattern finding algorithm with mismatch implementation  
