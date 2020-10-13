@@ -22,4 +22,8 @@ WEEK 2:
     
     task 2: numbers of string/genome nucleotide mismatches
     
-    task 3: pattern finding algorithm with mismatch implementation  
+    task 3: pattern finding algorithm with mismatch implementation [POSITION]
+    
+    task 4: pattern finding algorithm with mismatch implementation [COUNT]  
+    
+    

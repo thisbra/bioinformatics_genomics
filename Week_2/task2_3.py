@@ -14,7 +14,7 @@ def checkPatt(patt, dna, d):
 
     pos = []
 
-    for n in range(len(dna)-len(patt)):
+    for n in range(len(dna)-len(patt)+1):
         strd = dna[n:(n+len(patt))]
 
         if d >= hammingD(strd, patt, d):
@@ -24,9 +24,9 @@ def checkPatt(patt, dna, d):
 
 def main():
 
-    # patt = 'ATTCTGGA'
-    # dna = 'CGCCCGAATCCAGAACGCATTCCCATATTTCGGGACCACTGGCCTCCACGGTACGGACGTCAATCAAAT'
-    # d = 3
+    # patt = 'AAAAA'
+    # dna = 'AACAAGCTGATAAACATTTAAAGAG'
+    # d = 2
 
     fl = open('dataset_9_4.txt', 'r')
 
