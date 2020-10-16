@@ -24,15 +24,15 @@ def checkPatt(patt, dna, d):
 
 def main():
 
-    # patt = 'AAAAA'
-    # dna = 'AACAAGCTGATAAACATTTAAAGAG'
-    # d = 2
+    patt = 'AA'
+    dna = 'TACGCATTACAAAGCACA'
+    d = 1
 
-    fl = open('dataset_9_4.txt', 'r')
-
-    patt = fl.readline().strip('\n')
-    dna = fl.readline()
-    d = int(fl.readline())
+    # fl = open('dataset_9_4.txt', 'r')
+    #
+    # patt = fl.readline().strip('\n')
+    # dna = fl.readline()
+    # d = int(fl.readline())
 
     positions = checkPatt(patt, dna, d)
 

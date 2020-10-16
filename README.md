@@ -26,4 +26,9 @@ WEEK 2:
     
     task 4: pattern finding algorithm with mismatch implementation [COUNT]  
     
+    task 5: Frequent words application with inputed d mismatches [INCOMPLETE] [ASSISTED BY bla.py]
+    
+WEEK 3:
+
+    task 1:
     

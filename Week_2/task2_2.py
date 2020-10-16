@@ -12,8 +12,8 @@ def main():
 
     fl = open("dataset_9_3.txt", 'r')
 
-    strP = fl.readline()
-    strD = fl.readline()
+    strP = 'CTTGAAGTGGACCTCTAGTTCCTCTACAAAGAACAGGTTGACCTGTCGCGAAG'
+    strD = 'ATGCCTTACCTAGATGCAATGACGGACGTATTCCTTTTGCCTCAACGGCTCCT'
     nHamming = hammingD(strP, strD)
 
     print(nHamming)

@@ -22,7 +22,7 @@ def skew(dna):
 def main():
 
     fl = open("dataset_7_6.txt", 'r')
-    what = fl.read()
+    what = 'GATACACTTCCCGAGTAGGTACTG'
 
     asw = skew(what)
 
