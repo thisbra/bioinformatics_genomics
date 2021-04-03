@@ -2,7 +2,7 @@
 
 My first approach on bioinformatics specialization. Some Coursera tasks and independent inventions.
 
-WEEK 1:
+Finding Hidden messages on DNA (Week 1 | Bioinformatics I):
 
     task 1: counts and maps the number of incidences of a gene of your choice
     
@@ -16,7 +16,7 @@ WEEK 1:
     
     amino_frq: tells the frequency of DnaA contact with 20 of the amino acids 
     
-WEEK 2:
+Genome Sequencing (Week 2 | Bioinformatics II):
 
     skew: counts glycine-citosine skewing to indentify position of DNA-polymerase relative to ori
     
@@ -28,7 +28,5 @@ WEEK 2:
     
     task 5: Frequent words application with inputed d mismatches [INCOMPLETE] [ASSISTED BY bla.py]
     
-WEEK 3:
 
-    task 1:
     
