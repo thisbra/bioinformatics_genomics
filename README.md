@@ -1,5 +1,4 @@
-Test edit from GitDocs 2
- dois
+
 # Bioinformatics
 
 My first approach on bioinformatics specialization. Some Coursera tasks and independent inventions.
